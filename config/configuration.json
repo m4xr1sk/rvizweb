@@ -2,8 +2,43 @@
   "globalOptions": {
     "background": "#111111",
     "colladaLoader": "collada2",
-    "fixedFrame": "/base_link"
+    "fixedFrame": "/slamware_map",
+    "colladaServer": "http://localhost:8000/",
+    "url": "ws://localhost:9090",
+    "videoServer": "http://localhost:9999"
   },
   "sidebarOpened": true,
-  "displays": []
+  "displays": [
+    {
+      "isShown": true,
+      "name": "Map",
+      "options": {
+        "color": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        },
+        "continuous": true,
+        "opacity": "1",
+        "topic": "/slamware_ros_sdk_server_node/map"
+      },
+      "type": "occupancyGrid"
+    },
+    {
+      "isShown": true,
+      "name": "Grid",
+      "options": {
+        "cellSize": "1",
+        "color": "#cccccc",
+        "numCells": "10"
+      },
+      "type": "grid"
+    },
+    {
+      "isShown": true,
+      "name": "TF",
+      "options": {},
+      "type": "tf"
+    }
+  ]
 }
