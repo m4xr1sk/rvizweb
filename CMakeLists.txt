@@ -14,34 +14,34 @@ include_directories(
 )
 
 # Copy needed files to www build folder
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/www)
-configure_file(package.json www/package.json COPYONLY)
-configure_file(index.html www/index.html COPYONLY)
-configure_file(bower.json www/bower.json COPYONLY)
+#file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/www)
+#configure_file(package.json www/package.json COPYONLY)
+#configure_file(index.html www/index.html COPYONLY)
+#configure_file(bower.json www/bower.json COPYONLY)
 
 # Install webapp build tools
-execute_process(
-  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/www
-  COMMAND npm install
-)
+#execute_process(
+#  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/www
+#  COMMAND npm install
+#)
 
 # Build the webapp with bower and polymer
-execute_process(
-  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/www
-  COMMAND npm run build
-)
+#execute_process(
+#  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/www
+#  COMMAND npm run build
+#)
 
-install(
-  DIRECTORY
-    launch
-    ${CMAKE_CURRENT_BINARY_DIR}/www/build/www
-  DESTINATION
-    ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
+#install(
+#  DIRECTORY
+#    launch
+#    ${CMAKE_CURRENT_BINARY_DIR}/www/build/www
+#  DESTINATION
+#    ${CATKIN_PACKAGE_SHARE_DESTINATION}
+#)
 
-install(
-  DIRECTORY
-    config
-  DESTINATION
-    ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
+#install(
+#  DIRECTORY
+#    config
+#  DESTINATION
+#    ${CATKIN_PACKAGE_SHARE_DESTINATION}
+#)
